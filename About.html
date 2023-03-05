@@ -603,6 +603,54 @@
           .light-mode .about-giulia-photo.warm {
             opacity: 1;
           }
+          
+          @media only screen and (max-width: 479px) {
+          /* .about-giulia-photo-wrapper{
+            max-height: 80vh; */
+            .about-video-wrapper{
+                width: 100%;
+            }
+            .about-video-container{
+          margin-right:auto;
+          margin-left: 0;
+          width: 53%;
+        }
+          }
+
+          @media only screen and (max-width: 767px) {
+          /* .about-giulia-photo-wrapper{
+            max-height: 80vh; */
+            .about-video-wrapper{
+                width: 100%;
+            }
+            .about-video-container{
+          width: 53%;
+          max-width: 429px;
+        }
+          }
+        
+          @media only screen and (max-width: 991px) {
+          .about-giulia-photo-wrapper{
+              max-height: 101vh;
+          }
+          .about-video-container{
+          width: 53%;
+          max-width: 462px;
+        }
+        }
+        .about-video-container{
+          margin-right:auto;
+          margin-left: 0;
+          max-width: 425px;
+        }
+        .about-video-wrapper{
+          width: 189%;
+        }
+        .about-video{
+          top: -6%;
+          height: 110%;
+          width: 102%
+        }
 
           @media only screen and (max-width: 991px) {
             .light-mode .nav-menu-grid {
@@ -663,9 +711,9 @@
               class="nav-menu-item-wrapper"
             >
               <a href="stills.html" class="button nav-button w-button">Events</a
-              ><a href="/motion" class="button nav-button w-button">Motion</a
+              ><a href="Gallery.html" class="button nav-button w-button">Gallery</a
               ><a
-                href="/about"
+                href="About.html"
                 aria-current="page"
                 class="button nav-button w-button w--current"
                 >About</a
@@ -806,7 +854,7 @@
                     autoplay=""
                     loop=""
                     style="
-                      background-image: url('https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/6139d03190e20858dec6d960_Video Portrait BW-poster-00001.jpg');
+                      background-image: url('./videos/masti.mp4');
                     "
                     muted=""
                     playsinline=""
@@ -814,11 +862,11 @@
                     data-object-fit="cover"
                   >
                     <source
-                      src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/6139d03190e20858dec6d960_Video Portrait BW-transcode.mp4"
+                      src="./videos/masti.mp4"
                       data-wf-ignore="true"
                     />
                     <source
-                      src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/6139d03190e20858dec6d960_Video Portrait BW-transcode.webm"
+                      src="./videos/masti.mp4"
                       data-wf-ignore="true"
                     />
                   </video>
@@ -1081,26 +1129,26 @@
               </h3>
               <div class="about-giulia-photo-wrapper">
                 <img
-                  src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63769165d4de2442394ed214_giulia-cold.jpg"
-                  loading="lazy"
+                  src="./img/logo.jpeg"
+                  loading=""
                   sizes="(max-width: 479px) 90vw, (max-width: 767px) 92vw, (max-width: 991px) 90vw, 41vw"
                   srcset="
-                    https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63769165d4de2442394ed214_giulia-cold-p-500.jpg   500w,
-                    https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63769165d4de2442394ed214_giulia-cold-p-800.jpg   800w,
-                    https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63769165d4de2442394ed214_giulia-cold-p-1080.jpg 1080w,
-                    https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63769165d4de2442394ed214_giulia-cold.jpg        1400w
+                  ./img/logo.jpeg 500w,
+                  ./img/logo.jpeg 800w,
+                  ./img/logo.jpeg 1080w,
+                  ./img/logo.jpeg 1400w
                   "
                   alt="Photo of Giulia smiling at the camera, posing in front of a large lake with mountains in the back"
                   class="about-giulia-photo"
                 /><img
-                  src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63769165c83b013d52239a63_giulia-warm.jpg"
-                  loading="lazy"
+                  src="./img/logo.jpeg"
+                  loading=""
                   sizes="(max-width: 479px) 90vw, (max-width: 767px) 92vw, (max-width: 991px) 90vw, 41vw"
                   srcset="
-                    https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63769165c83b013d52239a63_giulia-warm-p-500.jpg   500w,
-                    https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63769165c83b013d52239a63_giulia-warm-p-800.jpg   800w,
-                    https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63769165c83b013d52239a63_giulia-warm-p-1080.jpg 1080w,
-                    https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63769165c83b013d52239a63_giulia-warm.jpg        1400w
+                    ./img/logo.jpeg 500w,
+                    ./img/logo.jpeg 800w,
+                    ./img/logo.jpeg 1080w,
+                    ./img/logo.jpeg 1400w
                   "
                   alt="Photo of Giulia smiling at the camera, posing in front of a large lake with mountains in the back"
                   class="about-giulia-photo warm"
@@ -1163,7 +1211,7 @@
               id="w-node-dde9bd7a-2b11-d4f0-dc02-0776fc3c0a91-7216063e"
               class="about-sticky"
             >
-              Brands I<br />worked with
+              Brands We<br />partnered with
             </h3>
             <div>
               <div class="w-layout-grid about-logo-grid">
@@ -2216,7 +2264,7 @@
             </div>
           </div>
         </div>
-        <div class="awards-background"></div>
+        <!-- <div class="awards-background"></div> -->
       </section>
     </main>
     <footer class="footer wf-section">
@@ -2233,7 +2281,7 @@
               data-w-id="3828a183-21ec-a577-75cf-9593a39afd44"
               class="footer-email-h4"
             >
-              <span id="footer-email">photo@giuligartner.com</span>
+              <span id="footer-email">lcnitd.co.in</span>
             </h4>
             <div class="bg _25"></div>
             <div class="footer-email-border"></div>
