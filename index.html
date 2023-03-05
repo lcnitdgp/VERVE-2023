@@ -1097,7 +1097,13 @@
           </div>
         </div>
       </header>
-      <div>
+      
+        <h2 id="timer"></h2>
+        <style>
+          #timer{
+            text-align: center;
+          }
+        </style>
         <!-- <script src="https://cdn.logwork.com/widget/countdown.js"></script> -->
         <!-- <a
           href="https://logwork.com/countdown-yx7a"
@@ -1110,7 +1116,7 @@
           ></a
         > -->
         
-      </div>
+     
       <section class="section about-section wf-section">
         <div class="container w-container">
           <div class="section-title">
@@ -1211,7 +1217,7 @@
                   />
                 </div>
                 <div class="photo-cms-wrapper">
-                  <div class="cms-meta-banner">
+                  <!-- <div class="cms-meta-banner">
                     <div
                       id="w-node-_21c5109d-e6cf-806a-37ab-512008b6ee3b-f6160641"
                       class="label"
@@ -1240,14 +1246,14 @@
                     >
                       Mongolia
                     </div>
-                  </div>
+                  </div> -->
                   <div class="photo-cms-meta-title">
                     <h2>Annual literary cum youth fest</h2>
                     <a href="/stills/follow-the-tracks" class="button w-button"
                       >About Verve</a
                     >
                   </div>
-                  <div class="photo-cms-meta-palette">
+                  <!-- <div class="photo-cms-meta-palette">
                     <div class="photo-cms-palette-code w-embed">
                       <div
                         class="photo-card-palette-code-follow-the-tracks"
@@ -1319,7 +1325,7 @@
                         <h6 id="#445f88">#445f88</h6>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="photo-cms-wrapper photo right">
                   <img
@@ -1528,7 +1534,7 @@
                   Cornwall, Scotland
                 </div>
               </div>
-              <h2 class="motion-cms-title">Amelia</h2>
+              <h2 class="motion-cms-title">Teaser</h2>
               <div class="motion-cms-images">
                 <a
                   aria-label="See case study"
@@ -1716,7 +1722,7 @@
                     /> -->
                   </svg>
                 </div>
-                <!-- <div>mas B</div>
+                <div>mas B</div>
                 <div class="footer-smile o">O</div>
                 <div class="footer-smile happy w-embed">
                   <svg
@@ -1734,12 +1740,28 @@
                   </svg>
                 </div>
                 <div>sc</div></a
-              > -->
+              >
             </div>
           </div>
         </div>
       </div>
     </footer>
+    <script>
+      var deadline = new Date("March 16, 2023 00:00:00").getTime();
+      var x = setInterval(function() {
+      var now = new Date().getTime();
+      var t = deadline - now;
+      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+      // var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+      // var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+      // var seconds = Math.floor((t % (1000 * 60)) / 1000);
+      document.getElementById("timer").innerHTML = days + "days  to  go";
+          if (t < 0) {
+              clearInterval(x);
+              document.getElementById("timer").innerHTML = "We are live";
+          }
+      }, 1000);
+      </script>
     <script>
       var preloader= document.getElementById("preloader");
       function loader(){
