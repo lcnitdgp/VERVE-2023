@@ -72,6 +72,24 @@
     />
     <meta name="theme-color" content="#0E1012" />
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+    <!-- <script>
+      $(document).ready(function() {
+  setTimeout(function() {
+    $('#body').addClass('loaded');
+    // Once the container has finished, the scroll appears
+    if ($('#body').hasClass('loaded')) {
+      // It is so that once the container is gone, the entire preloader section is deleted
+      $('#loader').delay(1000).queue(function() {
+        $(this).remove();
+      });}
+  }, 1000);});
+
+    </script> -->
+
+    
+
     <!-- Theme switcher -->
     <script>
       if (localStorage.getItem("light-mode") !== null) {
@@ -114,7 +132,7 @@
         -khtml-user-drag: none;
         -moz-user-drag: none;
         -o-user-drag: none;
-         user-drag: none; 
+        user-drag: none;
       }
 
       ::selection {
@@ -136,7 +154,11 @@
       }
     </style>
   </head>
-  <body class="body">
+  
+  <body class="body" onload="loader()" >
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
     <div class="css">
       <div class="css w-embed">
         <style>
@@ -144,6 +166,83 @@
           html.wf-design-mode .page-transition {
             pointer-events: none;
             display: none;
+          }
+
+          body {
+            background-color: #222;
+          }
+          #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 99999;
+          }
+          #loader {
+            display: block;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #9370db;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+          }
+          #loader:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #ba55d3;
+            -webkit-animation: spin 3s linear infinite;
+            animation: spin 3s linear infinite;
+          }
+          #loader:after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #ff00ff;
+            -webkit-animation: spin 1.5s linear infinite;
+            animation: spin 1.5s linear infinite;
+          }
+          @-webkit-keyframes spin {
+            0% {
+              -webkit-transform: rotate(0deg);
+              -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+              -ms-transform: rotate(360deg);
+              transform: rotate(360deg);
+            }
+          }
+          @keyframes spin {
+            0% {
+              -webkit-transform: rotate(0deg);
+              -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+              -ms-transform: rotate(360deg);
+              transform: rotate(360deg);
+            }
           }
 
           /* Parent's text color */
@@ -636,7 +735,7 @@
           aria-current="page"
           class="nav-logo w-nav-brand w--current"
           ><div class="nav-logo-svg w-embed">
-            <img src="logo.png"/>
+            <img src="logo.png" />
             <!-- <svg
               width="60"
               height="24"
@@ -697,8 +796,8 @@
                 fill="currentcolor"
               />
             </svg> -->
-            </div
-        ></a>
+          </div></a
+        >
         <nav role="navigation" class="nav-menu w-nav-menu">
           <div class="nav-menu-grid">
             <nav
@@ -706,14 +805,15 @@
               class="nav-menu-item-wrapper"
             >
               <a href="stills.html" class="button nav-button w-button">Events</a
-              ><a href="motion.html" class="button nav-button w-button">Motion</a
-              ><a href="/about" class="button nav-button w-button">About</a>
+              ><a href="gallery.html" class="button nav-button w-button"
+                >Gallery</a
+              ><a href="About.html" class="button nav-button w-button">About</a>
             </nav>
             <nav
               id="w-node-_3f5bd8a3-c0c8-4372-07aa-9cebb53656b3-b53656a5"
               class="nav-menu-item-wrapper"
             >
-              <a
+              <!-- <a
                 href="https://www.instagram.com/giuligartner/"
                 target="_blank"
                 class="button nav-button w-button"
@@ -722,14 +822,15 @@
                 href="mailto:photo@giuligartner.com?subject=%F0%9F%93%B8%20"
                 class="button nav-button w-button"
                 >Email</a
-              ><a
+              > -->
+              <a
                 aria-label="Switch between light mode and dark mode"
                 data-w-id="973595e9-2b10-c9d2-708b-e81b58c5d7b1"
                 href="#"
                 class="button aperture desktop w-inline-block"
                 ><div class="aperture-overflow">
-                  <div class="aperture-text f22">F/23</div>
-                  <div class="aperture-text f1-4">F/1.4</div>
+                  <div class="aperture-text f22">D</div>
+                  <div class="aperture-text f1-4">N</div>
                 </div>
                 <div class="f-light">
                   <div
@@ -820,7 +921,7 @@
       </div>
       <div class="nav-background"></div>
     </div>
-    <main>
+    <main id="Main">
       <header class="header wf-section">
         <div class="container w-container">
           <div
@@ -854,11 +955,11 @@
                     "
                     class="header-h1 _1"
                   >
-                    VERVE  XVIII   <br>
+                    VERVE XVIII <br />
                   </h1>
                   CARVE THE CHRONICLES OF YOUR ESCAPADE
                 </div>
-                
+
                 <div class="header-h1-wrapper">
                   <h1 class="header-h1 _2"></h1>
                 </div>
@@ -877,9 +978,7 @@
                         rotateX(0) rotateY(0) rotateZ(16deg) skew(0, 0);
                     "
                     class="header-h1 _3"
-                  >
-                    
-                  </h1>
+                  ></h1>
                 </div>
                 <div class="header-h1-wrapper">
                   <h1
@@ -896,9 +995,7 @@
                         rotateX(0) rotateY(0) rotateZ(16deg) skew(0, 0);
                     "
                     class="header-h1 _4"
-                  >
-                    
-                  </h1>
+                  ></h1>
                 </div>
                 <div class="header-h1-wrapper">
                   <h1
@@ -915,9 +1012,7 @@
                       filter: blur(8px);
                     "
                     class="header-h1 _5"
-                  >
-                    
-                  </h1>
+                  ></h1>
                 </div>
               </div>
               <a href="#" class="play-lightbox hide w-inline-block w-lightbox"
@@ -961,8 +1056,6 @@
               >
             </div>
 
-
-            
             <div
               data-poster-url="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63600c288b483e9c7398616b_reel-poster-00001.jpg"
               data-video-urls="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63600c288b483e9c7398616b_reel-transcode.mp4,https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63600c288b483e9c7398616b_reel-transcode.webm"
@@ -993,10 +1086,7 @@
                 data-wf-ignore="true"
                 data-object-fit="cover"
               >
-                <source
-                  src="logo.mp4"
-                  data-wf-ignore="true"
-                />
+                <source src="logo.mp4" data-wf-ignore="true" />
                 <source
                   src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/63600c288b483e9c7398616b_reel-transcode.webm"
                   data-wf-ignore="true"
@@ -1007,9 +1097,26 @@
           </div>
         </div>
       </header>
-      <div>
-        <script src="https://cdn.logwork.com/widget/countdown.js"></script>
-        <a href="https://logwork.com/countdown-yx7a" class="countdown-timer" data-style="circles" data-timezone="Asia/Kolkata" data-textcolor="#f0ebeb" data-date="2023-03-07 01:23" data-background="#f00505">VERVE</a> </div>
+      
+        <h2 id="timer"></h2>
+        <style>
+          #timer{
+            text-align: center;
+          }
+        </style>
+        <!-- <script src="https://cdn.logwork.com/widget/countdown.js"></script> -->
+        <!-- <a
+          href="https://logwork.com/countdown-yx7a"
+          class="countdown-timer"
+          data-style="circles"
+          data-timezone="Asia/Kolkata"
+          data-textcolor="#f0ebeb"
+          data-date="2023-03-07 01:23"
+          data-background="#f00505"
+          ></a
+        > -->
+        
+     
       <section class="section about-section wf-section">
         <div class="container w-container">
           <div class="section-title">
@@ -1104,13 +1211,13 @@
                     srcset="
                       comingsoon.jpg  500w,
                       comingsoon.jpg  800w,
-                      comingsoonjpg       1200w
+                      comingsoonjpg  1200w
                     "
                     class="photo-cms-image"
                   />
                 </div>
                 <div class="photo-cms-wrapper">
-                  <div class="cms-meta-banner">
+                  <!-- <div class="cms-meta-banner">
                     <div
                       id="w-node-_21c5109d-e6cf-806a-37ab-512008b6ee3b-f6160641"
                       class="label"
@@ -1139,14 +1246,14 @@
                     >
                       Mongolia
                     </div>
-                  </div>
+                  </div> -->
                   <div class="photo-cms-meta-title">
                     <h2>Annual literary cum youth fest</h2>
                     <a href="/stills/follow-the-tracks" class="button w-button"
                       >About Verve</a
                     >
                   </div>
-                  <div class="photo-cms-meta-palette">
+                  <!-- <div class="photo-cms-meta-palette">
                     <div class="photo-cms-palette-code w-embed">
                       <div
                         class="photo-card-palette-code-follow-the-tracks"
@@ -1218,7 +1325,7 @@
                         <h6 id="#445f88">#445f88</h6>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="photo-cms-wrapper photo right">
                   <img
@@ -1227,9 +1334,9 @@
                     alt=""
                     sizes="(max-width: 479px) 80vw, (max-width: 767px) 90vw, (max-width: 991px) 65vw, 50vw"
                     srcset="
-                      comingsoon.jpg 500w,
+                      comingsoon.jpg  500w,
                       comingsoon.jpg  800w,
-                      comingsoon.jpg       1200w
+                      comingsoon.jpg 1200w
                     "
                     class="photo-cms-image"
                   />
@@ -1251,13 +1358,13 @@
                     srcset="
                       comingsoon.jpg  500w,
                       comingsoon.jpg  800w,
-                      comingsoon.jpg       1200w
+                      comingsoon.jpg 1200w
                     "
                     class="photo-cms-image"
                   />
                 </div>
                 <div class="photo-cms-wrapper">
-                  <div class="cms-meta-banner">
+                  <!-- <div class="cms-meta-banner">
                     <div
                       id="w-node-_21c5109d-e6cf-806a-37ab-512008b6ee3b-f6160641"
                       class="label"
@@ -1286,15 +1393,15 @@
                     >
                       Costa Rica
                     </div>
-                  </div>
+                  </div> -->
                   <div class="photo-cms-meta-title">
-                    <h2>Cayuga Collection</h2>
-                    <a href="/stills/cayuga-collection" class="button w-button"
+                    <h2>Itenary</h2>
+                    <!-- <a href="/stills/cayuga-collection" class="button w-button"
                       >see case study</a
-                    >
+                    > -->
                   </div>
                   <div class="photo-cms-meta-palette">
-                    <div class="photo-cms-palette-code w-embed">
+                    <!-- <div class="photo-cms-palette-code w-embed">
                       <div
                         class="photo-card-palette-code-cayuga-collection"
                       ></div>
@@ -1365,7 +1472,7 @@
                           hsla(207.04225352112675, 38.70%, 45.76%, 1.00)
                         </h6>
                       </div>
-                    </div>
+                    </div> -->
                     <div
                       style="background-color: #414a4c"
                       class="photo-cms-palette-color _5"
@@ -1427,7 +1534,7 @@
                   Cornwall, Scotland
                 </div>
               </div>
-              <h2 class="motion-cms-title">Amelia</h2>
+              <h2 class="motion-cms-title">Teaser</h2>
               <div class="motion-cms-images">
                 <a
                   aria-label="See case study"
@@ -1536,7 +1643,7 @@
               data-w-id="3828a183-21ec-a577-75cf-9593a39afd44"
               class="footer-email-h4"
             >
-              <span id="footer-email">photo@giuligartner.com</span>
+              <span id="footer-email">lcnitd.co.in</span>
             </h4>
             <div class="bg _25"></div>
             <div class="footer-email-border"></div>
@@ -1570,7 +1677,7 @@
           >
             <a
               rel="noreferrer"
-              href="https://www.youtube.com/user/Giuligartner"
+              href="https://www.youtube.com/@TheLiteraryCircle"
               target="_blank"
               class="button w-button"
               >youtube</a
@@ -1585,16 +1692,16 @@
               href="https://twitter.com/giuligartner"
               target="_blank"
               class="button w-button"
-              >twitter</a
+              >facebook</a
             >
           </div>
           <div
             id="w-node-d564be68-0968-d7f3-e215-8175a63c9c81-8709f171"
             class="footer-smallprints"
           >
-            <div class="label smallprint">design &amp; dev ✦</div>
+            <div class="label smallprint">The Literary Circle</div>
             <div class="footer-credit label smallprint">
-              <a
+              <!-- <a
                 href="https://twitter.com/est_ce_thomas"
                 target="_blank"
                 class="come-and-say-hi w-inline-block"
@@ -1612,7 +1719,7 @@
                       clip-rule="evenodd"
                       d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32ZM11.25 13.5C12.7688 13.5 14 12.2688 14 10.75C14 9.23122 12.7688 8 11.25 8C9.73122 8 8.5 9.23122 8.5 10.75C8.5 12.2688 9.73122 13.5 11.25 13.5ZM23.5 10.75C23.5 12.2688 22.2688 13.5 20.75 13.5C19.2312 13.5 18 12.2688 18 10.75C18 9.23122 19.2312 8 20.75 8C22.2688 8 23.5 9.23122 23.5 10.75ZM8.99871 16.643L7.42499 16.8679C6.98645 16.9305 6.76718 16.9618 6.64292 17.1416C6.51867 17.3215 6.56308 17.5205 6.65189 17.9186C7.12086 20.0204 8.97337 25 16 25C23.0265 25 24.8791 20.0204 25.3481 17.9186C25.4369 17.5205 25.4813 17.3215 25.3571 17.1416C25.2328 16.9618 25.0135 16.9305 24.575 16.8679L23.0013 16.643C22.542 16.5774 22.3124 16.5446 22.1589 16.6386C22.0053 16.7326 21.9201 16.9811 21.7498 17.4782C21.2509 18.9337 19.8284 21.5 16 21.5C12.1716 21.5 10.7491 18.9337 10.2502 17.4782C10.0799 16.9811 9.99469 16.7326 9.84115 16.6386C9.6876 16.5446 9.45797 16.5774 8.99871 16.643Z"
                       fill="currentcolor"
-                    />
+                    /> -->
                   </svg>
                 </div>
                 <div>mas B</div>
@@ -1639,6 +1746,28 @@
         </div>
       </div>
     </footer>
+    <script>
+      var deadline = new Date("March 16, 2023 00:00:00").getTime();
+      var x = setInterval(function() {
+      var now = new Date().getTime();
+      var t = deadline - now;
+      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+      // var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+      // var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+      // var seconds = Math.floor((t % (1000 * 60)) / 1000);
+      document.getElementById("timer").innerHTML = days + "days  to  go";
+          if (t < 0) {
+              clearInterval(x);
+              document.getElementById("timer").innerHTML = "We are live";
+          }
+      }, 1000);
+      </script>
+    <script>
+      var preloader= document.getElementById("preloader");
+      function loader(){
+        preloader.style.display="none";
+      }
+    </script>
     <script
       src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60db5e59f76ae577e9f50d42"
       type="text/javascript"
