@@ -130,7 +130,10 @@
       }
     </style>
   </head>
-  <body class="body">
+  <body class="body" onload="loader()">
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
     <div class="css">
       <div class="css w-embed">
         <style>
@@ -139,6 +142,81 @@
             pointer-events: none;
             display: none;
           }
+
+          #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 99999;
+          }
+          #loader {
+            display: block;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #9370db;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+          }
+          #loader:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #ba55d3;
+            -webkit-animation: spin 3s linear infinite;
+            animation: spin 3s linear infinite;
+          }
+          #loader:after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #ff00ff;
+            -webkit-animation: spin 1.5s linear infinite;
+            animation: spin 1.5s linear infinite;
+          }
+          @-webkit-keyframes spin {
+            0% {
+              -webkit-transform: rotate(0deg);
+              -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+              -ms-transform: rotate(360deg);
+              transform: rotate(360deg);
+            }
+          }
+          @keyframes spin {
+            0% {
+              -webkit-transform: rotate(0deg);
+              -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+              -ms-transform: rotate(360deg);
+              transform: rotate(360deg);
+            }
+          }
+
 
           /* Parent's text color */
           a,
@@ -738,8 +816,8 @@
                 href="#"
                 class="button aperture desktop w-inline-block"
                 ><div class="aperture-overflow">
-                  <div class="aperture-text f22">F/23</div>
-                  <div class="aperture-text f1-4">F/1.4</div>
+                  <div class="aperture-text f22">D</div>
+                  <div class="aperture-text f1-4">N</div>
                 </div>
                 <div class="f-light">
                   <div
@@ -894,60 +972,60 @@
           <div class="about-slider">
             <div class="about-slider-row">
               <img
-                src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e509877408d75da804c25_Parker%20Scmidt-205.jpg"
+                src="gallery1.jpg"
                 loading="lazy"
                 sizes="(max-width: 479px) 153.22311401367188px, (max-width: 767px) 187.272705078125px, 24vw"
                 srcset="
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e509877408d75da804c25_Parker%20Scmidt-205-p-500.jpg  500w,
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e509877408d75da804c25_Parker%20Scmidt-205-p-800.jpg  800w,
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e509877408d75da804c25_Parker%20Scmidt-205.jpg       1000w
+                gallery1.jpg 500w,
+                gallery1.jpg  800w,
+                gallery1.jpg       1000w
                 "
                 alt="Photo of Giulia with her camera gears, filming a desert road"
                 class="about-slider-photo"
               /><img
-                src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/61f7f6a452675ad591cfd1a8_photo-creative-6.jpg"
+                src="gallery2.jpg"
                 loading="lazy"
                 alt="Photo of Giulia, laying on the ground and taking a photo of the photograph with a film camera"
                 class="about-slider-photo"
               /><img
-                src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/61f7f6a498d63ab45b056cb8_photo-creative-3.jpg"
+                src="gallery3.jpg"
                 loading="lazy"
                 sizes="(max-width: 479px) 288.2171325683594px, (max-width: 767px) 73vw, (max-width: 991px) 46vw, 45vw"
                 srcset="
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/61f7f6a498d63ab45b056cb8_photo-creative-3-p-500.jpeg  500w,
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/61f7f6a498d63ab45b056cb8_photo-creative-3.jpg        1551w
+                gallery3.jpg 500w,
+                gallery3.jpg       1551w
                 "
                 alt="Photo of Giulia filming a painting set on the edge of a cliff, at sunset hour"
                 class="about-slider-photo"
               /><img
-                src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e4fddb16556675ceb906f_97660031.jpg"
+                src="gallery4.jpg"
                 loading="lazy"
                 sizes="(max-width: 479px) 129.25604248046875px, (max-width: 767px) 33vw, (max-width: 991px) 157.9765625px, 20vw"
                 srcset="
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e4fddb16556675ceb906f_97660031-p-500.jpg  500w,
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e4fddb16556675ceb906f_97660031-p-800.jpg  800w,
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e4fddb16556675ceb906f_97660031.jpg       1000w
+                gallery4.jpg  500w,
+                gallery4.jpg  800w,
+                gallery4.jpg      1000w
                 "
                 alt="Photo of Giulia posing, with her camera as a sling on her shoulder"
                 class="about-slider-photo"
               /><img
-                src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e4f897080454b764d417c_AG_CORNWALL_DEC2021_10.jpg"
+                src="gallery5.jpg"
                 loading="lazy"
                 sizes="(max-width: 479px) 278.90960693359375px, (max-width: 767px) 71vw, 44vw"
                 srcset="
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e4f897080454b764d417c_AG_CORNWALL_DEC2021_10-p-500.jpg  500w,
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e4f897080454b764d417c_AG_CORNWALL_DEC2021_10-p-800.jpg  800w,
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e4f897080454b764d417c_AG_CORNWALL_DEC2021_10.jpg       1000w
+                gallery5.jpg  500w,
+                gallery5.jpg  800w,
+                gallery5.jpg      1000w
                 "
                 alt="Black and white photo of Giulia taking a photo with a DSLR and a long zoom lens"
                 class="about-slider-photo"
               /><img
-                src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/61f7f6a3627fccd34acd48ef_photo-creative-2.jpg"
+                src="gallery6.jpg"
                 loading="lazy"
                 alt="Photo of Giulia at golden hour, filming a field"
                 class="about-slider-photo"
               /><img
-                src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/61f7f6a45b40c6821923f5cd_photo-creative-7.jpg"
+                src="gallery7.jpg"
                 loading="lazy"
                 alt="Film photo of homemade pancakes"
                 class="about-slider-photo"
@@ -955,17 +1033,18 @@
             </div>
             <div class="about-slider-row">
               <img
-                src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e509877408d75da804c25_Parker%20Scmidt-205.jpg"
+                src="gallery8.jpg"
                 loading="lazy"
                 sizes="(max-width: 479px) 64vw, (max-width: 991px) 187.272705078125px, 24vw"
                 srcset="
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e509877408d75da804c25_Parker%20Scmidt-205-p-500.jpg  500w,
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e509877408d75da804c25_Parker%20Scmidt-205-p-800.jpg  800w,
-                  https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/635e509877408d75da804c25_Parker%20Scmidt-205.jpg       1000w
+                  gallery8.jpg 500w,
+                  gallery8.jpg  800w,
+                  gallery8.jpg      1000w
                 "
                 alt="Photo of Giulia with her camera gears, filming a desert road"
                 class="about-slider-photo"
-              /><img
+              />
+              <!-- <img
                 src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/61f7f6a452675ad591cfd1a8_photo-creative-6.jpg"
                 loading="lazy"
                 alt="Photo of Giulia, laying on the ground and taking a photo of the photograph with a film camera"
@@ -1012,7 +1091,7 @@
                 loading="lazy"
                 alt="Film photo of homemade pancakes"
                 class="about-slider-photo"
-              />
+              /> -->
             </div>
             <div class="about-slider-row">
               <img
@@ -1158,47 +1237,30 @@
             <div>
               <div class="w-richtext">
                 <p>
-                  The unique culture, impressive and almost imposing mountains
-                  masked by an open field paved the way for my creative
-                  upbringing. This environment allowed my visual sensations to
-                  blossom and gave free rein to my artistic inclinations.
+                  The static buzz in the air has been charged into a symphony of restless joy and it is time to find a new rhythm. We're past the days of staring into iridescent screens, it is time to witness grandeur in the flesh, to revive the creativity buried away.
                 </p>
                 <p>
-                  I have always been drawn to artistic mediums that can evoke
-                  feelings. So when I picked up a camera for the first time, it
-                  truly felt like magic.
+                  The Literary Circle is proud to unveil the official logo for the eighteenth edition of the annual Youth cum Cultural Festival of NIT Durgapur, VERVE.
                 </p>
                 <p>
-                  I shared how I perceive my everyday life with others –
-                  colorful, calm, yet ever-moving. I never liked to sit there,
-                  trying to explain. Instead, I want to show it,
-                  <strong>visually</strong>.
+                  The best weekend of the year awaits you, spread across four enthralling days, from 16th to 19th March, 2023. From a thrilling Treasure Hunt to an enchanting Prom, and a plethora of events in between, Verve XVIII is here.
+
+                  <!-- <strong>visually</strong>. -->
                 </p>
                 <p>
-                  The hunt for impactful moments sparked my curiosity to venture
-                  beyond the horizons and chase it to the edge of the world. As
-                  a result, my creative appetite has spread over to other
-                  mediums such as <strong>filmmaking</strong>,
-                  <strong>film photography</strong>, <strong>design</strong>,
-                  <strong>podcasting</strong>, <strong>music</strong>, and going
-                  on the hunt for the best pancakes on the planet.
+                  Carve the chronicles of your escapade.
                 </p>
                 <p>
-                  I discovered that extreme conditions and sleepless nights are
-                  an inseparable part of capturing striking images. I&#x27;ve
-                  learned to adapt and deal with difficult situations. I&#x27;ve
-                  lost sleep while laying on cold floors, changed flat tires
-                  while baking under the sun, and broke my wallet spending way
-                  too much on film rolls. But, I also learned when to hit the
-                  brakes and sip a Margarita by the pool.
+                  ERVE XVIII.
+16th-19th March, 2023.
                 </p>
-                <p>
+                <!-- <p>
                   Life never stops being interesting. There is always something
                   that catches my attention, and I never stop freezing moments
                   in time. Perhaps, I thought I would have seen it all one day,
                   but the reality is far from it. More adventures await, and I
                   would love you to venture with me on this journey.
-                </p>
+                </p> -->
               </div>
             </div>
           </div>
@@ -1225,7 +1287,7 @@
                     class="about-logo-wrapper"
                   >
                     <div class="about-logo w-embed">
-                      <svg
+                      <!-- <svg
                         width="100%"
                         style=""
                         viewBox="0 0 100 20"
@@ -1252,7 +1314,8 @@
                           d="M96.94 3.41776C96.4762 3.41776 96.0362 3.51554 95.64 3.69065L90.7725 5.86206C90.5325 4.47502 89.2725 3.41776 87.7525 3.41776C87.2925 3.41776 86.8537 3.51554 86.4575 3.69065L80.5113 6.34126H84.6925V19.516H90.8138V7.80696C90.8138 6.99904 91.4987 6.34138 92.3463 6.34138C93.1913 6.34138 93.875 6.99904 93.875 7.80696V19.516H100V6.34126C100 4.72556 98.6275 3.41776 96.94 3.41776Z"
                           fill="currentColor"
                         />
-                      </svg>
+                      </svg> -->
+                      <img src="logo.png"/>
                     </div>
                     <div class="about-logo-background"></div>
                   </div>
@@ -1710,7 +1773,7 @@
               </div>
             </div>
           </div>
-          <div class="w-layout-grid about-grid">
+          <!-- <div class="w-layout-grid about-grid">
             <h3
               id="w-node-_49aae621-0441-bad0-ef92-d25e99af3320-7216063e"
               class="about-sticky"
@@ -2140,9 +2203,9 @@
                 </div>
                 <div class="about-awards-background"></div>
               </div>
-            </div>
+            </div> -->
           </div>
-          <div class="w-layout-grid about-grid">
+          <!-- <div class="w-layout-grid about-grid">
             <h3
               id="w-node-e71136a0-48df-01da-cc14-bea0e554210d-7216063e"
               class="about-sticky"
@@ -2262,7 +2325,7 @@
                 <div class="about-awards-background"></div
               ></a>
             </div>
-          </div>
+          </div> -->
         </div>
         <!-- <div class="awards-background"></div> -->
       </section>
@@ -2398,6 +2461,12 @@
       ]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><!
     [endif]--><!-- Lenis smooth scroll, it's pure butter -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
+    <script>
+      var preloader= document.getElementById("preloader");
+      function loader(){
+        preloader.style.display="none";
+      }
+    </script>
     <script>
       const lenis = new Lenis({
         duration: 1.5,
